@@ -1,7 +1,5 @@
 //This program will allow you to determine which version is newer.
 //You can also compare versions with any number of points.
-
-#include "pch.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -59,13 +57,13 @@ void Compare(float *array, float *array2,const int&size,const int&size2)
 	{
 		if (array[i] > array2[i])
 		{
-			cout << "first version newer" << endl;
+			cout << "Version_B is older" << endl;//First version newer
 			 change = true;						
 			 break;
 		}
 		if (array[i] < array2[i])
 		{
-			cout << "Second version newer" << endl;
+			cout << "Version_A is older" << endl;//Second version newer
 			change = true;
 				break;
 		}
@@ -73,34 +71,34 @@ void Compare(float *array, float *array2,const int&size,const int&size2)
 	if(change==false)
 	{
 	if(size>size2)
-		cout << "first version newer" << endl;
+		cout << "Version_B is older" << endl;
 	else
-		cout << "Second version newer" << endl;
+		cout << "Version_A is older" << endl;
 	}
 }
 int main()
 {
-	string a = "8.1.13.41";
-	//string a = "8.3.13.41";	 //for checks
-	//string b = "8.1.13.41.01"; //for checks
-	string b = "9.1.009.125";	 //for checks
-	//string b = "8.1.009.125";
+	string Version_A = "8.1.13.41";
+	//string Version_A = "8.3.13.41";	 //for checks
+	//string Version_B = "8.1.13.41.01"; //for checks
+	//string Version_B = "9.1.009.125";	 //for checks
+	string Version_B = "8.1.009.125";
 	
 	
-	int countPoint1 = CountOfPoint(a); //creating a variable to store the number of points in a  (string a)
-	int countPoint2 = CountOfPoint(b); //creating a variable to store the number of points in a  (string b)
+	int countPoint1 = CountOfPoint(Version_A); //creating a variable to store the number of points in a  (string Version_A)
+	int countPoint2 = CountOfPoint(Version_B); //creating a variable to store the number of points in a  (string b)
 	int Sting_A_Size = countPoint1+1;
 	int Sting_B_Size = countPoint2 + 1;
 	
 	float *array_A = new float[Sting_A_Size];
 	float *array_B = new float[Sting_B_Size];
 	
-	PassToFloatArray(array_A,a, Sting_A_Size,a.size());
-	PassToFloatArray(array_B, b, Sting_B_Size, b.size());
+	PassToFloatArray(array_A, Version_A, Sting_A_Size, Version_A.size());
+	PassToFloatArray(array_B, Version_B, Sting_B_Size, Version_B.size());
 
-	cout << "version 1 : " << a << "\t\tString's size : " << a.size() << "\tValue's size :" << countPoint1 << endl;
+	cout << "Version_A : " << Version_A << "\t\tString's size : " << Version_A.size() << "\tValue's size :" << countPoint1 << endl;
 	OutputArray(array_A, Sting_A_Size);
-	cout << "version 2 : " << b << "\t\tString's size : " << b.size() << "\tValue's size :" << countPoint2 << endl;
+	cout << "Version_B : " << Version_B << "\t\tString's size : " << Version_B.size() << "\tValue's size :" << countPoint2 << endl;
 	OutputArray(array_B, Sting_B_Size);
 	Compare(array_A, array_B, Sting_A_Size, Sting_B_Size);
 	
@@ -109,4 +107,5 @@ int main()
 	array_A = nullptr;
 	array_B = nullptr;
 }
+
 
