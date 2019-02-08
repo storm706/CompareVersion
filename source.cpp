@@ -47,7 +47,7 @@ void OutputArray(const float a[],const int &size)
 void Compare(float *array, float *array2,const int&size,const int&size2)
 {
 	bool change = false;	 //variable to check the event
-	int LessSize;			// border of address space for the cycle
+	int LessSize;		// border of address space for the cycle
 	
 	if (size > size2)		
 		LessSize = size2;
@@ -80,7 +80,7 @@ int main()
 {
 	string Version_A = "8.1.13.41";
 	//string Version_A = "8.3.13.41";	 //for checks
-	//string Version_B = "8.1.13.41.01"; //for checks
+	//string Version_B = "8.1.13.41.01"; 	//for checks
 	//string Version_B = "9.1.009.125";	 //for checks
 	string Version_B = "8.1.009.125";
 	
